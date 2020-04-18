@@ -1,9 +1,9 @@
 import React from 'react'
-
+import Showcase from '../../Components/Showcase/Showcase'
 const Home = () => {
     return (
-        <div>
-            
+        <div className='Home'>
+            <Showcase />
         </div>
     )
 }
