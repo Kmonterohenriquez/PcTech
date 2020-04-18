@@ -1,8 +1,11 @@
 import React from 'react'
+import bg from '../../img/Showcase.png'
+
 
 const Showcase = () => {
     return (
-        <div className='Showcase'>
+        <div className='Showcase'> 
+            <img src={bg} alt="Showcase Background"/>
         </div>
     )
 }
