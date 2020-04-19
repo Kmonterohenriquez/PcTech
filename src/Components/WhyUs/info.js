@@ -21,5 +21,4 @@ let info = [
 		link: '/'
 	}
 ];
-
 export default info;

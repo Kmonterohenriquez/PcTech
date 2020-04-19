@@ -8,15 +8,16 @@ const WhyUs = () => {
 		<div className='WhyUs'>
 			<h1>Why Choose Us</h1>
 			<p>Fastest repair service with best prices!</p>
-			<div className='container'>
+			<div className='container box-container'>
                 {info.map(box => (
                     <div className='box'>
-                        <div className='title'>{box.title}</div>
-                        <div className='description'>{box.description}</div>
-                        <a className="read-me-btn" href={box.link}> Read more</a>
+                        <div className="circle"></div>
+                        <p className='title'>{box.title}</p>
+                        <p className='description'>{box.description}</p>
+                        <a className="read-me-btn" href={box.link}> Read more<i className="fas fa-chevron-right"></i></a>
                     </div>
                 ))}
-                ;
+                
             </div>
 		</div>
 	);
