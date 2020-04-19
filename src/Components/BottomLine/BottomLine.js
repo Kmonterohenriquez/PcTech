@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './BottomLine.sass';
 const BottomLine = () => {
 	return (
 		<div className='BottomLine '>
