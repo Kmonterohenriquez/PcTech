@@ -1,1 +1,26 @@
 .Services
+    &-container
+        padding: 150px 0
+        display: flex 
+        align-items: center
+        flex-direction: column
+        h1 
+            position: relative
+            font-size: 3.5rem
+            margin-bottom: 40px
+            &::after
+                position: absolute 
+                content: ""
+                bottom: -8px 
+                left: 50% 
+                height: 4px
+                width: 60px
+                background: #009CFF
+                transform: translate(-50%)
+                border-radius: 30px
+
+        p
+            text-align: center
+            color: #434952
+            max-width: 800px
+            line-height: 1.7rem
