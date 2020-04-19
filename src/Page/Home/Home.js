@@ -4,6 +4,7 @@ import WhyUs from '../../Components/WhyUs/WhyUs';
 import Who from '../../Components/Who/Who';
 import Services from '../../Components/Services/Services';
 import Quote from '../../Components/Quote/Quote';
+import Footer from '../../Components/Footer/Footer'
 
 const Home = () => {
 	return (
@@ -13,6 +14,7 @@ const Home = () => {
 			<Who />
 			<Services />
 			<Quote />
+			<Footer />
 		</div>
 	);
 };
