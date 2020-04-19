@@ -1,6 +1,6 @@
 import React from 'react';
-import img from '../../img/who.jpg'
-
+import img from '../../img/who.jpg';
+import './Who.sass'
 const Who = () => {
 	return (
 		<div className='Who'>
@@ -13,7 +13,7 @@ const Who = () => {
 				</p>
 				<button>View Services</button>
 			</div>
-            <img src={img} alt="Man repairing a computer."/>
+			<img src={img} alt='Man repairing a computer.' />
 		</div>
 	);
 };
