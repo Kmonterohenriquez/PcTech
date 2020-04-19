@@ -1,0 +1,62 @@
+.Quote
+    background: #009CFF
+    padding: 50px
+    &-container
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+        grid-gap: 40px
+        justify-items: center
+        align-items: center
+    .left-side
+        text-align: center 
+        color: white
+        h3 
+            font-size: 2rem 
+            line-height: 1.5rem
+        h1 
+            font-size: 3.8rem
+            margin-bottom: 40px
+        p 
+            max-width: 550px
+            font-size: 1.1rem
+    .right-side
+        form 
+            padding: 30px
+            background: white
+            border-radius: 30px
+            width: 300px
+            display: flex 
+            flex-direction: column 
+            // justify-content: center
+            align-items: center
+
+            h1 
+                margin-bottom: 15px
+            input, textarea
+                border-radius: 5px
+                padding: 10px
+                border: 1px solid #CBC9C9
+                width: 100%
+                box-sizing: border-box
+            input
+                margin-bottom: 10px
+            .btn-container 
+                
+                width: 100%
+                display: flex 
+                align-items: flex-start
+            button 
+                margin-top: 30px
+                padding: 12px 15px
+                background: #009CFF 
+                border-style: none 
+                color: white 
+                font-weight: bolder
+                font-size: 1rem
+                border-radius: 5px
+                cursor: pointer
+                transition: background .5s
+                
+                &:hover
+                    background: darken(#009CFF , 5% )
+
