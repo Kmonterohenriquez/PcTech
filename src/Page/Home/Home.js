@@ -3,6 +3,7 @@ import Showcase from '../../Components/Showcase/Showcase';
 import WhyUs from '../../Components/WhyUs/WhyUs';
 import Who from '../../Components/Who/Who';
 import Services from '../../Components/Services/Services';
+import Quote from '../../Components/Quote/Quote';
 
 const Home = () => {
 	return (
@@ -11,6 +12,7 @@ const Home = () => {
 			<WhyUs />
 			<Who />
 			<Services />
+			<Quote />
 		</div>
 	);
 };
