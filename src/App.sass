@@ -1,8 +1,13 @@
 * 
   margin: 0
   padding: 0
+@mixin container($max-width)
+  width: 90%
+  max-width: $max-width
+  margin: 0 auto
 
 .container 
-  width: 80%
-  max-width: 1400px
-  margin: 0 auto
+  @include container(1400px)
+
+.sm-container
+  @include container(1200px)
