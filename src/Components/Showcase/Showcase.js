@@ -1,6 +1,6 @@
 import React from 'react'
 import bg from '../../img/Showcase.png'
-
+import './Showcase.sass'
 
 const Showcase = () => {
     return (
