@@ -6,6 +6,7 @@ const Showcase = () => {
     return (
         <div className='Showcase'> 
             <img src={bg} alt="Showcase Background"/>
+            <h1>asdasdasd</h1>
         </div>
     )
 }
