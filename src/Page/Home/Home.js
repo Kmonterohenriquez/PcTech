@@ -5,6 +5,7 @@ import Who from '../../Components/Who/Who';
 import Services from '../../Components/Services/Services';
 import Quote from '../../Components/Quote/Quote';
 import Footer from '../../Components/Footer/Footer'
+import BottomLine from '../../Components/BottomLine/BottomLine'
 
 const Home = () => {
 	return (
@@ -15,6 +16,7 @@ const Home = () => {
 			<Services />
 			<Quote />
 			<Footer />
+			<BottomLine />
 		</div>
 	);
 };
