@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './AddProductModal.sass';
+
 const AddProductModal = props => {
 	const [name, setName] = useState('');
 	const [qty, setQty] = useState(1);
