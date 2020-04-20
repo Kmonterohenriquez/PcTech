@@ -13,6 +13,7 @@ const Showcase = () => {
 					<Link>Desktop</Link>
 					<Link>Location</Link>
 					<Link>About Us</Link>
+					<button>Admin Center</button>
 				</ul>
 			</nav>
 			<img className='showcase-bg' src={bg} alt='Showcase Background' />
