@@ -8,7 +8,7 @@ const AddProductModal = props => {
 
 	function handleQty(e) {
 		if (qty < 1) {
-			setQty(1)
+			setQty(1);
 		} else {
 			setQty(e.target.value);
 		}
@@ -32,35 +32,44 @@ const AddProductModal = props => {
 					<img src='' alt='' />
 				</div>
 				<div className='right-side'>
-					<label htmlFor=''>Product Name</label>
-					<input
-						type='text'
-						placeholder='Enter a Name'
-						onChange={e => setName(e.target.value)}
-					/>
-					<label htmlFor=''>Quantity</label>
-					<input
-						className='qty'
-						type='number'
-						placeholder='Enter quantity'
-						onChange={e => handleQty(e)}
-						value= {qty}
-					/>
-					<select name="" id="">
-						<option value="">Choose a size</option>
-						<option value="s">Small</option>
-						<option value="m">Medium</option>
-						<option value="l">Large</option>
-					</select>
-					<label>Description</label>
-					<textarea
-						name=''
-						id=''
-						cols='30'
-						rows='10'
-						placeholder='Briefly description of the product...'
-						onChange={e => setDescription(e.target.value)}
-					></textarea>
+					<div className='side'>
+						<label htmlFor=''>Product Name</label>
+						<input
+							type='text'
+							placeholder='Enter a Name'
+							onChange={e => setName(e.target.value)}
+						/>
+						<label htmlFor=''>Quantity</label>
+						<input
+							className='qty'
+							type='number'
+							placeholder='Enter quantity'
+							onChange={e => handleQty(e)}
+							value={qty}
+						/>
+						<label htmlFor=''>Operating System</label>
+						<input type='text' placeholder='Enter OS' />
+						<label htmlFor=''>Graphic Card</label>
+						<input type='text' placeholder='Enter Graphic Card' />
+						<label htmlFor=''>Memory Ram</label>
+						<input type='text' placeholder='Enter Memory Ram' />
+					</div>
+					<div className='side'>
+						<label htmlFor=''>Mother Board</label>
+						<input type='text' placeholder='Enter Mother Board' />
+						<label htmlFor=''>Storage</label>
+						<input type='text' placeholder='Enter Storage' />
+						
+						<label>Description</label>
+						<textarea
+							name=''
+							id=''
+							cols='30'
+							rows='10'
+							placeholder='Briefly description of the product...'
+							onChange={e => setDescription(e.target.value)}
+						></textarea>
+					</div>
 				</div>
 			</form>
 			<div className='btn-container'>

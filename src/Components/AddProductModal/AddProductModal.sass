@@ -8,6 +8,7 @@
     left: 50% 
     transform: translate(-50%)
     z-index: 5
+    margin-bottom: 50px
 
     .close-icon 
         position: absolute
@@ -46,7 +47,12 @@
             
         .right-side 
             display: flex
-            flex-direction: column
+            // flex-direction: column
+            .side
+                display: flex
+                flex-direction: column
+                &:first-child
+                    margin-right: 20px
             
 
             label 
