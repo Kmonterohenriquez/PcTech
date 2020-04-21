@@ -9,7 +9,7 @@ const Showcase = () => {
 		<div className='Showcase'>
 			<nav>
 				<ul>
-					<Link>Laptops</Link>
+					<Link to='/laptops'>Laptops</Link>
 					<Link>Desktop</Link>
 					<Link>Location</Link>
 					<Link>About Us</Link>
