@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './AdminCenter.sass';
 import AddProductModal from '../../Components/AddProductModal/AddProductModal';
-
+import AdminCenterNav from '../../Components/AdminCenterNav/AdminCenterNav';
 const AdminCenter = () => {
 	const [addBtn, setAddBtn] = useState(false);
 
@@ -10,6 +10,7 @@ const AdminCenter = () => {
 	}
 	return (
 		<div className='AdminCenter'>
+			<AdminCenterNav />
 			{addBtn ? (
 				<>
 					<div className='unclickable' onClick={() => setAddBtn(!addBtn)}></div>
