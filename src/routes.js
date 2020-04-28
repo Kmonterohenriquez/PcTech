@@ -4,6 +4,7 @@ import Home from './Page/Home/Home';
 import AdminCenter from './Page/AdminCenter/AdminCenter';
 import Laptops from './Page/Laptops/Laptops';
 import Desktops from './Page/Desktops/Desktops'
+import Location from './Page/Location/Location'
 export default (
 	<Switch>
 		<Route component={Home} exact path='/' />
