@@ -10,5 +10,6 @@ export default (
 		<Route component={AdminCenter} exact path='/admin_center' />
 		<Route component={Laptops} exact path='/laptops'/>
 		<Route component={Desktops} exact path='/desktops'/>
+		<Route component={Location} exact path='/location'/>
 	</Switch>
 );
