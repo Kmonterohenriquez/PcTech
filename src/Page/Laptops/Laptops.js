@@ -1,15 +1,17 @@
-import React from 'react'
-import './Laptops.sass'
+import React from 'react';
+import './Laptops.sass';
 import Nav from '../../Components/Nav/Nav';
-import Title from '../../Components/Title/Title'
+import Title from '../../Components/Title/Title';
 
 const Laptops = () => {
-    return (
-        <div>
-            <Nav />
-            <Title title='Laptops'/>
-        </div>
-    )
-}
+	return (
+		<div className='Laptops'>
+			<Nav />
+			<div className='Laptops-container'>
+				<Title title='Laptops' />
+			</div>
+		</div>
+	);
+};
 
-export default Laptops
+export default Laptops;
