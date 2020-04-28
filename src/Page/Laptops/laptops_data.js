@@ -1,4 +1,4 @@
-import pic_case from '../../img/case.webp';
+import pic_case from '../../img/laptop.webp';
 
 let data = [
 	{

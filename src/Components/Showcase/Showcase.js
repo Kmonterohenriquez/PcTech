@@ -10,9 +10,9 @@ const Showcase = () => {
 			<nav>
 				<ul>
 					<Link to='/laptops'>Laptops</Link>
-					<Link>Desktop</Link>
-					<Link>Location</Link>
-					<Link>About Us</Link>
+					<Link to='/desktops' >Desktop</Link>
+					<Link to='/location'>Location</Link>
+					<Link to='/about_us'>About Us</Link>
 					<Link className='admin-btn' to='/admin_center'>Admin Center</Link>
 				</ul>
 			</nav>
