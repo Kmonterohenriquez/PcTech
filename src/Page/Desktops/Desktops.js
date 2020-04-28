@@ -1,5 +1,5 @@
 import React from 'react'
-import './Desktop.sass'
+import './Desktops.sass'
 const Desktop = () => {
     return (
         <div className='Desktop'>
