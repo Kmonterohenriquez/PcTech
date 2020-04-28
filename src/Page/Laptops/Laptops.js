@@ -8,7 +8,7 @@ const Laptops = () => {
 	return (
 		<div className='Laptops'>
 			<Nav />
-			<div className='Laptops-container'>
+			<div className='Laptops-container container'>
 				<Title title='Laptops' />
 				<Card />
 			</div>
