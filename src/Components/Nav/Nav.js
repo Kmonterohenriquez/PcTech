@@ -7,7 +7,9 @@ const Nav = () => {
 	return (
 		<div className='Nav'>
 			<div className='Nav-container container'>
-				<img src={blue_logo} alt='PC tech blue logo' />
+				<Link to='/'>
+					<img src={blue_logo} alt='PC tech blue logo' />
+				</Link>
 				<nav>
 					<ul>
 						<Link>Laptops</Link>
