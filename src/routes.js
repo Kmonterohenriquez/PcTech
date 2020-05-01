@@ -13,6 +13,6 @@ export default (
 		<Route component={Laptops} exact path='/laptops' />
 		<Route component={Desktops} exact path='/desktops' />
 		<Route component={Location} exact path='/location' />
-		<Route component={About} exact pacth='/about_us' />
+		<Route component={About} exact path='/about_us' />
 	</Switch>
 );
