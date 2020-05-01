@@ -6,8 +6,10 @@ const About = () => {
 	return (
 		<div className='About'>
 			<Nav />
+                <h1 className='title'>Who we are</h1>
 			<div className='box-container'>
 				<div className='box'>
+
 					<img src={pic_1} alt='kevin' />
 					<h1>Front-End Developer</h1>
                     <h2>Kevin Montero</h2>
