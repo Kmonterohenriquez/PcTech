@@ -1,0 +1,19 @@
+INSERT INTO products_pctech (
+    pc_name,
+    os,
+    cpu,
+    graphic_card,
+    ram,
+    motherboard,
+    storage
+)
+VALUES
+(
+    $1,
+    $2,
+    $3,
+    $4,
+    $5,
+    $6,
+    $7
+);

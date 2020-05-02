@@ -19,6 +19,7 @@ massive(CONNECTION_STRING)
 app.get('/api/products', productsCtrl.getAllProducts);
 app.get('/api/products/:product_id', productsCtrl.getOneProduct);
 app.delete('/api/products/:product_id', productsCtrl.deleteProduct);
+app.post('/api/products', productsCtrl.addProduct);
 
 const port = SERVER_PORT || 5000;
 app.listen(port, () => console.log(`Server running on port ${port}`));
