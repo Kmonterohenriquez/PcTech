@@ -8,7 +8,7 @@ module.exports = {
 	},
 	getOneProduct: async (req, res) => {
 		const db = req.app.get('db');
-		const { product_id } = req.body;
+		const { product_id } = req.params;
 		await db.products
 			.get_one_product(product_id)
 			.then((product) => res.status(200).send(product))
