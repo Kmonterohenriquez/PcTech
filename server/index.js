@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express'),
 	massive = require('massive'),
 	{ SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env,
-	// productsCtrl = require('./controllers/productCtrl'),
+	productsCtrl = require('./controllers/productCtrl'),
 	app = express();
 
 app.use(express.json());
