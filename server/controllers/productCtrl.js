@@ -14,5 +14,13 @@ module.exports = {
 			.then((product) => res.status(200).send(product))
 			.catch((err) => res.status(500).send(err));
 	},
+	deleteProduct: async(req, res)=>{
+		const db = req.app.get('db');
+		const { product_id } = req.body;
+		await db.products
+		.delete_product(product_id)
+		.then(res.sendStatus(200))
+		.catch( err => status(500).send(err));
+	}
 	
 };
