@@ -24,9 +24,21 @@ module.exports = {
 			ram,
 			motherboard,
 			storage,
+			price,
+			qty,
 		} = req.body;
 		await db.products
-			.add_product(pc_name, os, cpu, graphic_card, ram, motherboard, storage)
+			.add_product(
+				pc_name,
+				os,
+				cpu,
+				graphic_card,
+				ram,
+				motherboard,
+				storage,
+				price,
+				qty
+			)
 			.then((product) => res.status(200).send(product))
 			.catch((err) => res.status(500).send(err));
 	},

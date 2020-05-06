@@ -20,6 +20,7 @@ app.get('/api/products', productsCtrl.getAllProducts);
 app.get('/api/products/:product_id', productsCtrl.getOneProduct);
 app.delete('/api/products/:product_id', productsCtrl.deleteProduct);
 app.post('/api/products', productsCtrl.addProduct);
+// app.put('/api/products/', productsCtrl.editProduct);
 
 const port = SERVER_PORT || 5000;
 app.listen(port, () => console.log(`Server running on port ${port}`));

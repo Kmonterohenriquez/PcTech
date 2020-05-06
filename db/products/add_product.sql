@@ -5,7 +5,9 @@ INSERT INTO products_pctech (
     graphic_card,
     ram,
     motherboard,
-    storage
+    storage,
+    price,
+    qty
 )
 VALUES
 (
@@ -15,5 +17,7 @@ VALUES
     $4,
     $5,
     $6,
-    $7
+    $7,
+    $8,
+    $9
 );

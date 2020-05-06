@@ -3,7 +3,7 @@ import './WhyUs.sass';
 import info from './info.js';
 
 const WhyUs = () => {
-	console.log(info);
+	
 	return (
 		<div className='WhyUs'>
 			<h1>Why Choose Us</h1>
