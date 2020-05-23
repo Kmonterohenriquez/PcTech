@@ -16,7 +16,9 @@ massive(CONNECTION_STRING)
 	.catch((err) => console.log(err));
 
 // ENDPOINTS
-app.get('/api/products', productsCtrl.getAllProducts);
+app.get('/api/products/', productsCtrl.getAllProducts);
+app.get('api/products/desktops', productsCtrl.getAllDesktops);
+app.get('api/products/laptops', productsCtrl.getAllLaptops);
 app.get('/api/products/:product_id', productsCtrl.getOneProduct);
 app.delete('/api/products/:product_id', productsCtrl.deleteProduct);
 app.post('/api/products', productsCtrl.addProduct);

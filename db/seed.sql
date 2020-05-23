@@ -6,5 +6,7 @@ create table products_pctech (
     graphic_card varchar(250),
     ram varchar(250),
     motherboard varchar(250),
-    storage varchar(250)
+    storage varchar(250),
+    product_pic text,
+    type varchar(20)
 );

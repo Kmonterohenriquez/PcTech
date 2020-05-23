@@ -1,12 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Desktops.sass';
 import Nav from '../../Components/Nav/Nav';
 import Title from '../../Components/Title/Title';
 import Card from '../../Components/Card/Card';
 import data from './desktops_data';
 import Footer from '../../Components/Footer/Footer';
+import axios from 'axios';
 
 const Desktops = () => {
+	const [allDesktops, setAllDesktops] = useState([]);
+
+	useEffect(() => {
+		getDesktops();
+		console.log('useEffect updated');
+	}, []);
+
+	const getDesktops = () => {
+		axios.get('/api/products/desktops').then((res) => {
+			setAllDesktops(res.data);
+		});
+	};
+	console.clear()
+	console.log('All Desktops:', allDesktops);
 	return (
 		<div className='Desktops'>
 			<Nav />
@@ -14,7 +29,7 @@ const Desktops = () => {
 				<Title title='Desktops' />
 
 				<div className='grid-container'>
-					{data.map(curr => (
+					{data.map((curr) => (
 						<Card data={curr} />
 					))}
 				</div>

@@ -25,7 +25,7 @@ const AdminCenter = () => {
 		getAllProducts()
 		
 	};
-	console.clear();
+	// console.clear();
 	console.log(allProducts);
 	return (
 		<div className='AdminCenter'>

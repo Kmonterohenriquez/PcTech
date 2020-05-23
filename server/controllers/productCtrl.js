@@ -6,6 +6,20 @@ module.exports = {
 			.then((products) => res.status(200).send(products))
 			.catch((err) => res.status(500).send(err));
 	},
+	getAllDesktops: async (req, res) => {
+		const db = req.app.get('db');
+		await db.products
+			.get_all_desktops()
+			.then((desktops) => res.status(200).send(desktops))
+			.catch((err) => res.status(500).send(err));
+	},
+	getAllLaptops: async (req, res) => {
+		const db = req.app.get('db');
+		await db.products
+			.get_all_laptops()
+			.then((laptops) => res.status(200).send(laptops))
+			.catch((err) => res.status(500).send(err));
+	},
 	getOneProduct: async (req, res) => {
 		const db = req.app.get('db');
 		const { product_id } = req.params;

@@ -1,2 +1,2 @@
-select * 
+select *
 from products_pctech;
