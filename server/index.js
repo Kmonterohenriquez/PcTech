@@ -6,7 +6,7 @@ const express = require('express'),
 	app = express();
 
 app.use(express.json());
-
+app.use(express.static(`${__dirname}/../build`));
 // MASSIVE -v 3.1.4
 massive(CONNECTION_STRING)
 	.then((db) => {
