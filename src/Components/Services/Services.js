@@ -1,5 +1,6 @@
 import React from 'react';
 import './Services.sass';
+import {Link} from 'react-router-dom'
 const Services = () => {
 	return (
 		<div className='Services'>
@@ -10,6 +11,14 @@ const Services = () => {
 					Orlando and repair your system at your home/office at very cheapest
 					price.
 				</p>
+				<div className='Services-list'>
+					<Link>All</Link>/
+					<Link>hardware</Link> /
+					<Link>laptop</Link> /
+					<Link>network</Link> /
+					<Link>support</Link> /
+					<Link>Software</Link>
+				</div>
 			</div>
 		</div>
 	);
