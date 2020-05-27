@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import data from './data';
 const Services = () => {
 	const [filter, setFilter] = useState('');
-	let dataFiltered = filter === ""? data : data.filter((curr) => curr.type === filter);
+	let dataFiltered =
+		filter === '' ? data : data.filter((curr) => curr.type === filter);
 	return (
 		<div className='Services'>
 			<div className='Services-container sm-container'>
@@ -14,14 +15,13 @@ const Services = () => {
 					Orlando and repair your system at your home/office at very cheapest
 					price.
 				</p>
-				<p>Filter: {filter}</p>
 				<div className='Services-list'>
-					<Link onClick={()=> setFilter('')}>All</Link>/
-					<Link onClick={()=> setFilter('hardware')}>hardware</Link> /
-					<Link onClick={()=> setFilter('laptop')}>laptop</Link> /
-					<Link onClick={()=> setFilter('network')}>network</Link> /
-					<Link onClick={()=> setFilter('support')}>support</Link> /
-					<Link onClick={()=> setFilter('software')}>Software</Link>
+					<Link className={filter ===""?"blue":""} onClick={() => setFilter('')}>All</Link>/
+					<Link className={filter ==="hardware"?"blue":""} onClick={() => setFilter('hardware')}>hardware</Link> /
+					<Link className={filter ==="laptop"?"blue":""} onClick={() => setFilter('laptop')}>laptop</Link> /
+					<Link className={filter ==="network"?"blue":""} onClick={() => setFilter('network')}>network</Link> /
+					<Link className={filter ==="support"?"blue":""} onClick={() => setFilter('support')}>support</Link> /
+					<Link className={filter ==="software"?"blue":""} onClick={() => setFilter('software')}>Software</Link>
 				</div>
 			</div>
 			<div className='All-Services'>

@@ -38,6 +38,9 @@
         transition: color .4s
         &:hover 
             color: #009CFF
+        &.blue 
+            color: #009CFF
+    
 
 .All-Services
     max-width: 1200px
@@ -45,7 +48,7 @@
     margin: 0 auto
     padding-bottom: 150px
     display: grid 
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr))
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr))
     grid-gap: 30px
     justify-items: flex-start
 
@@ -76,12 +79,16 @@
             padding: 25px 
             h1 
                 margin: 12px 0
-                font-size: .9rem
-                font-weight: 500
+                font-size: 1rem
+                font-weight: 400
+                letter-spacing: .5px
                 &:before 
                     color: transparent
             p 
-                font-size: .8rem
+                letter-spacing: .5px
+                font-size: 1rem
+                font-weight: 100
+                line-height: 1.6rem
 
             button 
                 margin-top: 20px
