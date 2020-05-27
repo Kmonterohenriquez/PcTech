@@ -6,6 +6,7 @@ import Services from '../../Components/Services/Services';
 import Quote from '../../Components/Quote/Quote';
 import Footer from '../../Components/Footer/Footer'
 import BottomLine from '../../Components/BottomLine/BottomLine'
+import Counter from '../../Components/Counter/Counter';
 
 const Home = () => {
 	return (
@@ -14,6 +15,7 @@ const Home = () => {
 			<WhyUs />
 			<Who />
 			<Services />
+			<Counter />
 			<Quote />
 			<Footer />
 			<BottomLine />
