@@ -7,6 +7,7 @@ import Quote from '../../Components/Quote/Quote';
 import Footer from '../../Components/Footer/Footer'
 import BottomLine from '../../Components/BottomLine/BottomLine'
 import Counter from '../../Components/Counter/Counter';
+import Testimonials from '../../Components/Testimonials/Testimonials'
 
 const Home = () => {
 	return (
@@ -16,6 +17,7 @@ const Home = () => {
 			<Who />
 			<Services />
 			<Counter />
+			<Testimonials />
 			<Quote />
 			<Footer />
 			<BottomLine />
