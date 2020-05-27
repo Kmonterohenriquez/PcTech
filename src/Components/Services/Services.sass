@@ -1,10 +1,11 @@
 .Services
     &-container
-        padding: 150px 0
+        // background: blue
+        padding: 150px 0 0px
         display: flex 
         align-items: center
         flex-direction: column
-        h1 
+        .main-title 
             position: relative
             font-size: 3.5rem
             margin-bottom: 40px
@@ -19,7 +20,7 @@
                 transform: translate(-50%)
                 border-radius: 30px
 
-        p
+        .main-desc
             text-align: center
             color: #434952
             max-width: 800px
@@ -37,3 +38,39 @@
         transition: color .4s
         &:hover 
             color: #009CFF
+
+.All-Services
+    max-width: 1200px
+    margin: 0 auto
+    padding-bottom: 150px
+    display: grid 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+    grid-gap: 20px
+    justify-items: space-between
+
+    .single-service
+        width: 100%
+        min-width: 250px
+        img 
+            // height: 100%
+            width: 100%
+        .info
+            padding: 25px 
+            h1 
+                margin: 12px 0
+                font-size: .9rem
+                font-weight: 500
+                &:before 
+                    color: transparent
+            p 
+                font-size: .8rem
+                // width: 100%
+
+            button 
+                margin-top: 20px
+                background: #009CFF
+                border-style: none
+                padding: 10px 15px
+                letter-spacing: .5px
+                font-weight: bold
+                color: white
