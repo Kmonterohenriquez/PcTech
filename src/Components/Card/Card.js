@@ -24,11 +24,11 @@ const Card = props => {
 				<p className='text'>{cpu}</p>
 				<p className='text'>{graphic}</p>
 				<p className='text'>{ram}</p>
-    <p className='text'>{motherboard}</p>
-    <p className='text'>{storage}</p>
+				<p className='text'>{motherboard}</p>
+				<p className='text'>{storage}</p>
 			</div>
 			<div className='bottom-container'>
-	<p className='price'>$ {price}</p>
+				<p className='price'>$ {price}</p>
 				<button>Buy</button>
 			</div>
 		</div>

@@ -20,8 +20,6 @@ const Desktops = () => {
       setAllDesktops(res.data);
     });
   };
-  // console.clear()
-  console.log("All Desktops:", allDesktops);
   return (
     <div className="Desktops">
       <Nav />
