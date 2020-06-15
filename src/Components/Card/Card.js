@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Card.sass';
-
+import axios from 'axios';
 const Card = props => {
-	console.log('from card', props.data);
-	let { img, title, os, cpu, graphic, ram, motherboard, storage } = props.data;
+	let {product_id, pc_name, os, cpu, graphic, ram, motherboard, storage, price } = props.data;
+	const [pic, setPic] = useState([]);
+
+	useEffect(() => {
+		getPics();
+		console.log('useEffect updated');
+	}, []);
+	
+	const getPics = async() => {
+		 axios.get(`/api/products/pictures/${product_id}`).then((res) => {
+			setPic(res.data[0].pic_1);
+		});
+	};
 	return (
 		<div className='Card'>
-			<img src={img} alt='' />
+			<img src={pic} alt={pc_name} />
 			<div className='info'>
-				<p className='title'> {title}</p>
+				<p className='title'> {pc_name}</p>
 				<p className='os'>{os}</p>
 				<p className='text'>{cpu}</p>
 				<p className='text'>{graphic}</p>
@@ -17,7 +28,7 @@ const Card = props => {
     <p className='text'>{storage}</p>
 			</div>
 			<div className='bottom-container'>
-				<p className='price'>$ 1235</p>
+	<p className='price'>$ {price}</p>
 				<button>Buy</button>
 			</div>
 		</div>
