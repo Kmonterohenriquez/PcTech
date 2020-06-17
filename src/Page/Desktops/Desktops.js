@@ -13,7 +13,7 @@ const Desktops = () => {
   useEffect(() => {
     getDesktops();
     console.log("useEffect updated");
-  }, [allDesktops]);
+  }, []);
 
   const getDesktops = async () => {
     axios.get("/api/products/desktops/").then((res) => {
@@ -28,7 +28,7 @@ const Desktops = () => {
 
         <div className="grid-container">
           {allDesktops.map((curr) => (
-            <Link to={`/details/${curr.id}`}>
+            <Link to={`/details/${curr.product_id}`}>
               <Card data={curr} />
             </Link>
           ))}
