@@ -3,7 +3,6 @@ import "./Desktops.sass";
 import Nav from "../../Components/Nav/Nav";
 import Title from "../../Components/Title/Title";
 import Card from "../../Components/Card/Card";
-import data from "./desktops_data";
 import Footer from "../../Components/Footer/Footer";
 import axios from "axios";
 
@@ -13,7 +12,7 @@ const Desktops = () => {
   useEffect(() => {
     getDesktops();
     console.log("useEffect updated");
-  }, []);
+  }, [allDesktops]);
 
   const getDesktops = async () => {
     axios.get("/api/products/desktops/").then((res) => {

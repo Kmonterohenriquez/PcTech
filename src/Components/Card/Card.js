@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Card.sass";
 import axios from "axios";
+import camera from "../../img/camera-icon.png";
 const Card = (props) => {
   let {
     product_id,
@@ -13,7 +14,7 @@ const Card = (props) => {
     storage,
     price,
   } = props.data;
-  const [pic, setPic] = useState([]);
+  const [pic, setPic] = useState(camera);
 
   useEffect(() => {
     getPics();
@@ -27,7 +28,9 @@ const Card = (props) => {
   };
   return (
     <div className="Card">
-      <img src={pic} alt={pc_name} />
+      <div className="img-container">
+        <img src={pic} alt={pc_name} className={pic === camera ? "camera-icon" : ""} />
+      </div>
       <div className="info">
         <p className="title"> {pc_name}</p>
         <p className="os">{os}</p>
