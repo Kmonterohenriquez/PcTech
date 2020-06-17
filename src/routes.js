@@ -6,6 +6,7 @@ import Laptops from './Page/Laptops/Laptops';
 import Desktops from './Page/Desktops/Desktops';
 import Location from './Page/Location/Location';
 import About from './Page/About/About';
+import Cart from './Page/Cart/Cart'
 export default (
 	<Switch>
 		<Route component={Home} exact path='/' />
@@ -14,5 +15,6 @@ export default (
 		<Route component={Desktops} exact path='/desktops' />
 		<Route component={Location} exact path='/location' />
 		<Route component={About} exact path='/about_us' />
+		<Route component={Cart} exact path='/cart'/>
 	</Switch>
 );
