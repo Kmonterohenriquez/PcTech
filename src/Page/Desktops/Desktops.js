@@ -5,6 +5,7 @@ import Title from "../../Components/Title/Title";
 import Card from "../../Components/Card/Card";
 import Footer from "../../Components/Footer/Footer";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Desktops = () => {
   const [allDesktops, setAllDesktops] = useState([]);
@@ -27,7 +28,9 @@ const Desktops = () => {
 
         <div className="grid-container">
           {allDesktops.map((curr) => (
-            <Card data={curr} />
+            <Link to={`/details/${curr.id}`}>
+              <Card data={curr} />
+            </Link>
           ))}
         </div>
       </div>
