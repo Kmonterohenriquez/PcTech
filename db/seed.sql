@@ -20,3 +20,10 @@ create table pic_pctech (
     pic_3 varchar(250),
     pic_4 varchar(250),
 )
+
+
+--->  Cart  <---
+create table cart_pctech (
+    cart_id serial primary key,
+    product_id int REFERENCES product_pctech(product_id)
+)

@@ -26,6 +26,9 @@ const Details = (props) => {
       setPics(res.data);
     });
   };
+  const addCart = async () => {
+
+  }
   console.log("item info: ", itemData[0]);
   console.log("pics: ", pics[0]);
   return (
@@ -43,17 +46,25 @@ const Details = (props) => {
             <img className="bg-pic" src={curr.pic_1} alt="" />
           </div>
         ))}
-        {itemData.map((curr) => (
-          <div className="Details-info">
-            <h1>{curr.pc_name}</h1>
-            <p><span>Operating System:</span> {curr.os}</p>
-            <p><span>CPU:</span> {curr.cpu}</p>
-            <p><span>Graphic card:</span> {curr.graphic_card}</p>
-            <p><span>Memory RAM:</span> {curr.ram}</p>
-            <p><span>Motherboard:</span> {curr.motherboard}</p>
-            <p><span>Storage:</span> {curr.storage}</p>
-          </div>
-        ))}
+        <div>
+          {itemData.map((curr) => (
+            <div className="Details-info">
+              <h1>{curr.pc_name}</h1>
+              <p><span>Operating System:</span> {curr.os}</p>
+              <p><span>CPU:</span> {curr.cpu}</p>
+              <p><span>Graphic card:</span> {curr.graphic_card}</p>
+              <p><span>Memory RAM:</span> {curr.ram}</p>
+              <p><span>Motherboard:</span> {curr.motherboard}</p>
+              <p><span>Storage:</span> {curr.storage}</p>
+              <div className="Details-btn-container">
+                <h3 className="price"><span>$</span>{curr.price}</h3>
+                <button onClick={()=> addCart()}>Add Cart</button>
+              </div>
+            </div>
+          ))}
+
+         
+        </div>
       </div>
     </div>
   );
