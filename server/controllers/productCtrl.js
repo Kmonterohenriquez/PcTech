@@ -98,4 +98,12 @@ module.exports = {
       .then((product) => res.status(200).send(product))
       .catch((err) => res.status(500).send(err));
   },
+  addCart: async (req, res) => {
+    const db = req.app.get("db");
+    const { product_id } = req.params;
+    await db.products
+      .add_cart(product_id)
+      .then((product) => res.status(200).send(product))
+      .catch((err) => res.status(500).send(err));
+  },
 };

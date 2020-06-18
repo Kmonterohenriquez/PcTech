@@ -23,6 +23,7 @@ app.get("/api/products/laptops", productsCtrl.getAllLaptops);
 app.get("/api/products/:product_id", productsCtrl.getOneProduct);
 app.delete("/api/products/:product_id", productsCtrl.deleteProduct);
 app.post("/api/products", productsCtrl.addProduct);
+app.post("/api/cart/:product_id", productsCtrl.addCart);
 // app.put('/api/products/', productsCtrl.editProduct);
 
 const port = SERVER_PORT || 5000;
