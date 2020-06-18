@@ -1,6 +1,5 @@
 import React from "react";
 import "./Cart.sass";
-import { Link } from "react-router-dom";
 import logo from "../../img/blue_logo.png";
 import ItemOnCart from "../../Components/ItemOnCart/ItemOnCart";
 const Cart = (props) => {

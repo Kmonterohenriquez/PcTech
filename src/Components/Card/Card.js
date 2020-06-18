@@ -42,7 +42,7 @@ const Card = (props) => {
       </div>
       <div className="bottom-container">
         <p className="price">$ {price}</p>
-        <button>Buy</button>
+        <button>More</button>
       </div>
     </div>
   );

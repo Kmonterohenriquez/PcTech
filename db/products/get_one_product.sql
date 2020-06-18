@@ -1,3 +1,3 @@
 select * 
-from products_pctech
+from product_pctech
 where product_id = $1;
