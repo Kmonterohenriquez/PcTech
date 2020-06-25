@@ -26,8 +26,10 @@ const Details = (props) => {
       setPics(res.data);
     });
   };
-  const addCart = async () => {
-
+  const addCart = async (itemID) => {
+    await axios.post(`/api/cart/${itemID}`)
+      .catch( err=> console.log(err));
+    console.log("Item added!")
   }
   console.log("item info: ", itemData[0]);
   console.log("pics: ", pics[0]);
@@ -58,12 +60,10 @@ const Details = (props) => {
               <p><span>Storage:</span> {curr.storage}</p>
               <div className="Details-btn-container">
                 <h3 className="price"><span>$</span>{curr.price}</h3>
-                <button onClick={()=> addCart()}>Add Cart</button>
+                <button onClick={()=> addCart(itemID)}>Add Cart</button>
               </div>
             </div>
-          ))}
-
-         
+          ))} 
         </div>
       </div>
     </div>

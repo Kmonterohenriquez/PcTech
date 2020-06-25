@@ -21,7 +21,6 @@ create table pic_pctech (
     pic_4 varchar(250),
 )
 
-
 --->  Cart  <---
 create table cart_pctech (
     cart_id serial primary key,

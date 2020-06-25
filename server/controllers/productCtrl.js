@@ -106,4 +106,11 @@ module.exports = {
       .then((product) => res.status(200).send(product))
       .catch((err) => res.status(500).send(err));
   },
+  getCart: async (req, res) => {
+    const db = req.app.get("db");
+    await db.products
+      .get_cart()
+      .then((product) => res.status(200).send(product))
+      .catch((err) => res.status(500).send(err));
+  },
 };

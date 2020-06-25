@@ -24,6 +24,7 @@ app.get("/api/products/:product_id", productsCtrl.getOneProduct);
 app.delete("/api/products/:product_id", productsCtrl.deleteProduct);
 app.post("/api/products", productsCtrl.addProduct);
 app.post("/api/cart/:product_id", productsCtrl.addCart);
+app.get("/api/cart/", productsCtrl.getCart)
 // app.put('/api/products/', productsCtrl.editProduct);
 
 const port = SERVER_PORT || 5000;
