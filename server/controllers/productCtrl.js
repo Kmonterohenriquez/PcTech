@@ -101,8 +101,40 @@ module.exports = {
   addCart: async (req, res) => {
     const db = req.app.get("db");
     const { product_id } = req.params;
+
+    // Checking if the item exist already
+    let check_item = await db.products.check_item_on_cart(product_id);
+    check_item = check_item[0];
+
+    console.log("check_item", check_item);
+
+    if (check_item) {
+      // Increase Qty if the Item exist already
+      await db.products
+        .increase_qty(product_id)
+        .then((product) => res.status(200).send(product))
+        .catch((err) => res.status(500).send(err));
+    } else {
+      // Create Item if the Item doesn't exist already
+      await db.products
+        .add_cart(product_id)
+        .then((product) => res.status(200).send(product))
+        .catch((err) => res.status(500).send(err));
+    }
+  },
+  increaseQty: async (req, res) => {
+    const db = req.app.get("db");
+    const { product_id } = req.params;
     await db.products
-      .add_cart(product_id)
+      .increase_qty(product_id)
+      .then((product) => res.status(200).send(product))
+      .catch((err) => res.status(500).send(err));
+  },
+  decreaseQty: async (req, res) => {
+    const db = req.app.get("db");
+    const { product_id } = req.params;
+    await db.products
+      .decrease_qty(product_id)
       .then((product) => res.status(200).send(product))
       .catch((err) => res.status(500).send(err));
   },

@@ -24,6 +24,8 @@ app.get("/api/products/:product_id", productsCtrl.getOneProduct);
 app.delete("/api/products/:product_id", productsCtrl.deleteProduct);
 app.post("/api/products", productsCtrl.addProduct);
 app.post("/api/cart/:product_id", productsCtrl.addCart);
+app.put("/api/cart/increase/:product_id", productsCtrl.increaseQty);
+app.put("/api/cart/decrease/:product_id", productsCtrl.decreaseQty);
 app.get("/api/cart/", productsCtrl.getCart)
 // app.put('/api/products/', productsCtrl.editProduct);
 
