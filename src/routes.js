@@ -8,6 +8,7 @@ import Location from "./Page/Location/Location";
 import About from "./Page/About/About";
 import Cart from "./Page/Cart/Cart";
 import Details from "./Page/Details/Details";
+import Checkout from "./Page/Checkout/Checkout";
 
 export default (
   <Switch>
@@ -19,5 +20,6 @@ export default (
     <Route component={About} exact path="/about_us" />
     <Route component={Cart} exact path="/cart" />
     <Route component={Details} path="/details/:id" />
+    <Route component={Checkout} exact path ="/checkout"/>
   </Switch>
 );
