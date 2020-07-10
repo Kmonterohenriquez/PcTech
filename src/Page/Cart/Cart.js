@@ -3,6 +3,7 @@ import "./Cart.sass";
 import logo from "../../img/blue_logo.png";
 import ItemOnCart from "../../Components/ItemOnCart/ItemOnCart";
 import axios from "axios";
+import {Link} from 'react-router-dom'
 
 const Cart = (props) => {
   const [cart, setCart] = useState([]);
@@ -38,7 +39,7 @@ const Cart = (props) => {
             <i className=" fas fa-chevron-left"></i>
             Return Shopping
           </p>
-          <button>Checkout</button>
+          <Link to='/checkout'><button>Checkout</button></Link>
         </div>
       </div>
     </div>
