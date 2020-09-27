@@ -38,28 +38,12 @@ module.exports = {
   },
   addProduct: async (req, res) => {
     const db = req.app.get("db");
-    const {
-      pc_name,
-      os,
-      cpu,
-      graphic_card,
-      ram,
-      motherboard,
-      storage,
-      price,
-      qty,
-    } = req.body;
+    const {pc_name, qty, description, type, price, os, cpu, graphic_card, ram, motherBoard, storage} = req.body;
+    
+    console.log("Req body: ", req.body)
     await db.products
       .add_product(
-        pc_name,
-        os,
-        cpu,
-        graphic_card,
-        ram,
-        motherboard,
-        storage,
-        price,
-        qty
+        pc_name, qty, description, type, price, os, cpu, graphic_card, ram, motherBoard, storage
       )
       .then((product) => res.status(200).send(product))
       .catch((err) => res.status(500).send(err));
