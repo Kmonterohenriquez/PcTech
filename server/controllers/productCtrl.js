@@ -1,6 +1,6 @@
 module.exports = {
   getPics: async (req, res) => {
-    const db = req.app.get("db");
+    const db = req.app.get('db');
     const { product_id } = req.params;
     await db.products
       .get_pics(product_id)
@@ -8,28 +8,28 @@ module.exports = {
       .catch((err) => res.status(500).send(err));
   },
   getAllProducts: async (req, res) => {
-    const db = req.app.get("db");
+    const db = req.app.get('db');
     await db.products
       .get_all_products()
       .then((products) => res.status(200).send(products))
       .catch((err) => res.status(500).send(err));
   },
   getAllDesktops: async (req, res) => {
-    const db = req.app.get("db");
+    const db = req.app.get('db');
     await db.products
       .get_all_desktops()
       .then((desktops) => res.status(200).send(desktops))
       .catch((err) => res.status(500).send(err));
   },
   getAllLaptops: async (req, res) => {
-    const db = req.app.get("db");
+    const db = req.app.get('db');
     await db.products
       .get_all_laptops()
       .then((laptops) => res.status(200).send(laptops))
       .catch((err) => res.status(500).send(err));
   },
   getOneProduct: async (req, res) => {
-    const db = req.app.get("db");
+    const db = req.app.get('db');
     const { product_id } = req.params;
     await db.products
       .get_one_product(product_id)
@@ -37,19 +37,51 @@ module.exports = {
       .catch((err) => res.status(500).send(err));
   },
   addProduct: async (req, res) => {
-    const db = req.app.get("db");
-    const {pc_name, qty, description, type, price, os, cpu, graphic_card, ram, motherBoard, storage} = req.body;
-    
-    console.log("Req body: ", req.body)
+    const db = req.app.get('db');
+    const {
+      pc_name,
+      qty,
+      description,
+      pd_type,
+      price,
+      os,
+      cpu,
+      graphic_card,
+      ram,
+      motherboard,
+      storage,
+      img1,
+      img2,
+      img3,
+      img4,
+      img5,
+    } = req.body;
+
+    console.log('Req body: ', req.body);
     await db.products
       .add_product(
-        pc_name, qty, description, type, price, os, cpu, graphic_card, ram, motherBoard, storage
+        pc_name,
+        qty,
+        description,
+        pd_type,
+        price,
+        os,
+        cpu,
+        graphic_card,
+        ram,
+        motherboard,
+        storage,
+        img1,
+        img2,
+        img3,
+        img4,
+        img5
       )
       .then((product) => res.status(200).send(product))
       .catch((err) => res.status(500).send(err));
   },
   deleteProduct: async (req, res) => {
-    const db = req.app.get("db");
+    const db = req.app.get('db');
     const { product_id } = req.params;
     await db.products
       .delete_product(product_id)
@@ -57,17 +89,10 @@ module.exports = {
       .catch((err) => res.status(500).send(err));
   },
   editProduct: async (req, res) => {
-    const db = req.app.get("db");
+    const db = req.app.get('db');
     const { product_id } = req.params;
-    const {
-      pc_name,
-      os,
-      cpu,
-      graphic_card,
-      ram,
-      motherboard,
-      storage,
-    } = req.body.productEdited;
+    const { pc_name, os, cpu, graphic_card, ram, motherboard, storage } =
+      req.body.productEdited;
     await db.products
       .edit_product(
         product_id,
@@ -83,14 +108,14 @@ module.exports = {
       .catch((err) => res.status(500).send(err));
   },
   addCart: async (req, res) => {
-    const db = req.app.get("db");
+    const db = req.app.get('db');
     const { product_id } = req.params;
 
     // Checking if the item exist already
     let check_item = await db.products.check_item_on_cart(product_id);
     check_item = check_item[0];
 
-    console.log("check_item", check_item);
+    console.log('check_item', check_item);
 
     if (check_item) {
       // Increase Qty if the Item exist already
@@ -107,7 +132,7 @@ module.exports = {
     }
   },
   increaseQty: async (req, res) => {
-    const db = req.app.get("db");
+    const db = req.app.get('db');
     const { product_id } = req.params;
     await db.products
       .increase_qty(product_id)
@@ -115,7 +140,7 @@ module.exports = {
       .catch((err) => res.status(500).send(err));
   },
   decreaseQty: async (req, res) => {
-    const db = req.app.get("db");
+    const db = req.app.get('db');
     const { product_id } = req.params;
     await db.products
       .decrease_qty(product_id)
@@ -123,7 +148,7 @@ module.exports = {
       .catch((err) => res.status(500).send(err));
   },
   getCart: async (req, res) => {
-    const db = req.app.get("db");
+    const db = req.app.get('db');
     await db.products
       .get_cart()
       .then((product) => res.status(200).send(product))

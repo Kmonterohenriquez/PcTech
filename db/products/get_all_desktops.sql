@@ -1,3 +1,3 @@
 select *
-from product_pctech
-where type ='desktop';
+from products_pctech
+where pd_type ='desktop';

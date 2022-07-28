@@ -1,17 +1,18 @@
----> Product Info <---
-create table product_pctech (
+---> Products Info <---
+create table products_pctech (
     product_id serial primary key,
     pc_name varchar(250),
     os varchar(100),
+    qty varchar(250),
     cpu varchar(250),
     graphic_card varchar(250),
     ram varchar(250),
     motherboard varchar(250),
     storage varchar(250),
-    type varchar(20)
+    pd_type varchar(20)
 );
 
----> Picture  <---
+---> Pictures  <---
 create table pic_pctech (
     pic_id serial primary key,
     product_id int REFERENCES product_pctech(product_id),

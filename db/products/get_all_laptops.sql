@@ -1,3 +1,3 @@
 select *
 from products_pctech
-where type= "Laptop";
+where pd_type= "laptop";

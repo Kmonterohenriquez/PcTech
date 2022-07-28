@@ -2,14 +2,19 @@ INSERT INTO products_pctech (
     pc_name, 
     qty, 
     description, 
-    type, 
+    pd_type, 
     price, 
     os, 
     cpu, 
     graphic_card, 
     ram, 
     motherboard, 
-    storage
+    storage,
+    img1,
+    img2,
+    img3,
+    img4,
+    img5
 )
 VALUES
 (
@@ -23,5 +28,10 @@ VALUES
     $8,
     $9,
     $10,
-    $11
+    $11,
+    $12,
+    $13,
+    $14,
+    $15,
+    $16
 );

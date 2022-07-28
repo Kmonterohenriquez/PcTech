@@ -1,2 +1,2 @@
 select *
-from product_pctech;
+from products_pctech;
