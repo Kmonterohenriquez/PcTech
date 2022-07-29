@@ -9,17 +9,18 @@ import { Link } from "react-router-dom";
 
 const Desktops = () => {
   const [allDesktops, setAllDesktops] = useState([]);
-
-  useEffect(() => {
-    getDesktops();
-    console.log("useEffect updated");
-  }, []);
-
+  
   const getDesktops = async () => {
     axios.get("/api/products/desktops/").then((res) => {
       setAllDesktops(res.data);
     });
   };
+
+  useEffect(() => {
+    getDesktops()
+    console.log("useEffect updated");
+  }, []);
+
   return (
     <div className="Desktops">
       <Nav />

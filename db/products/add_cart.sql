@@ -3,5 +3,5 @@ INSERT INTO cart_pctech (
     qty
 ) VALUES (
     $1,
-    1
+    $2
 );

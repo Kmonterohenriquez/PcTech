@@ -25,13 +25,13 @@ const AddProductModal = (props) => {
 
   function handleChange(evt) {
     const value = evt.target.value;
-    console.log("value from FE: ", value)
+    console.log('value from FE: ', value);
     setState({
       ...state,
       [evt.target.name]: value,
     });
-
   }
+  
   const addItem = async () => {
     const {
       name,

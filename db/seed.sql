@@ -25,5 +25,6 @@ create table pic_pctech (
 --->  Cart  <---
 create table cart_pctech (
     cart_id serial primary key,
-    product_id int REFERENCES product_pctech(product_id)
+    product_id int,
+    qty int
 )

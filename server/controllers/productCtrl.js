@@ -57,6 +57,8 @@ module.exports = {
       img5,
     } = req.body;
 
+    qty = +qty;
+    price = +price;
     console.log('Req body: ', req.body);
     await db.products
       .add_product(
@@ -88,6 +90,14 @@ module.exports = {
       .then(res.sendStatus(200))
       .catch((err) => res.status(500).send(err));
   },
+  deleteProductFromCart: async (req, res) => {
+    const db = req.app.get('db');
+    const { product_id } = req.params;
+    await db.products
+      .delete_product_from_cart(product_id)
+      .then(res.sendStatus(200))
+      .catch((err) => res.status(500).send(err));
+  },
   editProduct: async (req, res) => {
     const db = req.app.get('db');
     const { product_id } = req.params;
@@ -110,6 +120,7 @@ module.exports = {
   addCart: async (req, res) => {
     const db = req.app.get('db');
     const { product_id } = req.params;
+    console.log('product_id', product_id);
 
     // Checking if the item exist already
     let check_item = await db.products.check_item_on_cart(product_id);
@@ -126,7 +137,7 @@ module.exports = {
     } else {
       // Create Item if the Item doesn't exist already
       await db.products
-        .add_cart(product_id)
+        .add_cart(+product_id, 1)
         .then((product) => res.status(200).send(product))
         .catch((err) => res.status(500).send(err));
     }

@@ -6,13 +6,9 @@ import axios from 'axios';
 const Details = (props) => {
   const itemID = props.match.params.id;
   const [itemData, setItemData] = useState([]);
-  const [pics, setPics] = useState([]);
-  // const [bgPic, setBgPic] = useState();
 
   useEffect(() => {
     getItemData();
-    getPics();
-    console.log('useEffect executed');
   }, []);
 
   const getItemData = () => {
@@ -21,34 +17,26 @@ const Details = (props) => {
       .then((res) => setItemData(res.data))
       .catch((err) => console.log(err));
   };
-  const getPics = async () => {
-    axios.get(`/api/products/pictures/${itemID}`).then((res) => {
-      setPics(res.data);
-    });
-  };
   const addCart = async (itemID) => {
     await axios.post(`/api/cart/${itemID}`).catch((err) => console.log(err));
     console.log('Item added!');
   };
-  console.log('item info: ', itemData[0]);
-  console.log('pics: ', pics[0]);
+  console.log('item ID: ', itemID);
   return (
     <div className='Details'>
       <Nav />
       <div className='Details-container container'>
-        {pics.map((curr) => (
-          <div className='img-container'>
-            <div className='sm-img-container'>
-              <img className='sm-pic' src={curr.pic_1} alt='' />
-              <img className='sm-pic' src={curr.pic_2} alt='' />
-              <img className='sm-pic' src={curr.pic_3} alt='' />
-              <img className='sm-pic' src={curr.pic_4} alt='' />
+        {itemData.map((curr) => (
+          <div className='flex'>
+            <div className='img-container margin-5-r'>
+              <div className='sm-img-container'>
+                <img className='sm-pic' src={curr.img1} alt='' />
+                <img className='sm-pic' src={curr.img2} alt='' />
+                <img className='sm-pic' src={curr.img3} alt='' />
+                <img className='sm-pic' src={curr.img4} alt='' />
+              </div>
+              <img className='bg-pic' src={curr.img4} alt='' />
             </div>
-            <img className='bg-pic' src={curr.pic_1} alt='' />
-          </div>
-        ))}
-        <div>
-          {itemData.map((curr) => (
             <div className='Details-info'>
               <h1>{curr.pc_name}</h1>
               <p>
@@ -71,14 +59,15 @@ const Details = (props) => {
               </p>
               <div className='Details-btn-container'>
                 <h3 className='price'>
+                  Price: 
                   <span>$</span>
                   {curr.price}
                 </h3>
                 <button onClick={() => addCart(itemID)}>Add Cart</button>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );

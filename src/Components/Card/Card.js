@@ -1,48 +1,31 @@
-import React, { useEffect, useState } from "react";
-import "./Card.sass";
-import axios from "axios";
-import camera from "../../img/camera-icon.png";
+import React from 'react';
+import './Card.sass';
+import camera from '../../img/camera-icon.png';
 const Card = (props) => {
-  let {
-    product_id,
-    pc_name,
-    os,
-    cpu,
-    graphic,
-    ram,
-    motherboard,
-    storage,
-    price,
-  } = props.data;
-  const [pic, setPic] = useState(camera);
+  let { pc_name, os, cpu, graphic, ram, motherboard, storage, price, img1 } =
+    props.data;
 
-  useEffect(() => {
-    getPics();
-    console.log("useEffect updated");
-  }, []);
-
-  const getPics = async () => {
-    axios.get(`/api/products/pictures/${product_id}`).then((res) => {
-      setPic(res.data[0].pic_1);
-    });
-  };
   return (
-    <div className="Card">
-      <div className="img-container">
-        <img src={pic} alt={pc_name} className={pic === camera ? "camera-icon" : ""} />
+    <div className='Card'>
+      <div className='img-container'>
+        <img
+          src={img1}
+          alt={pc_name}
+          className={img1 === camera ? 'camera-icon' : ''}
+        />
       </div>
-      <div className="info">
-        <p className="title"> {pc_name}</p>
-        <p className="os">{os}</p>
-        <p className="text">{cpu}</p>
-        <p className="text">{graphic}</p>
-        <p className="text">{ram}</p>
-        <p className="text">{motherboard}</p>
-        <p className="text">{storage}</p>
+      <div className='info'>
+        <p className='title'> {pc_name}</p>
+        <p className='os'>{os}</p>
+        <p className='cpu'>{cpu}</p>
+        <p className='graphic'>{graphic}</p>
+        <p className='ram'>{ram}</p>
+        <p className='motherboard'>{motherboard}</p>
+        <p className='storage'>{storage}</p>
       </div>
-      <div className="bottom-container">
-        <p className="price">$ {price}</p>
-        <button>Add to Cart</button>
+      <div className='bottom-container'>
+        <p className='price'>$ {price}</p>
+        <button>Read More</button>
       </div>
     </div>
   );

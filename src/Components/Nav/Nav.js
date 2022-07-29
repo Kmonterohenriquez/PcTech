@@ -24,7 +24,7 @@ const Nav = () => {
             <Link to='/laptops'>Laptops</Link>
             <Link to='/desktops'>Desktops</Link>
             <Link to='/location'>Location</Link>
-            <Link to='/about'>About Us</Link>
+            <Link to='/about_us'>About Us</Link>
             <Link to='/cart' className='cart'>
               <i className='fas fa-shopping-cart'>
                 <p className='item-num'>{cart}</p>
