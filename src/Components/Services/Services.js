@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import './Services.sass';
 import { Link } from 'react-router-dom';
-import data from './data';
+import getConsts from '../../utils/consts';
+
 const Services = () => {
 	const [filter, setFilter] = useState('');
+	const { sectionTitle, sectionDescription, services} = getConsts.ourServices
+	 
 	let dataFiltered =
-		filter === '' ? data : data.filter((curr) => curr.type === filter);
+		filter === '' ? services : services.filter((curr) => curr.type === filter);
 	return (
 		<div className='Services'>
 			<div className='Services-container sm-container'>
-				<h1 className='main-title'>Our Services</h1>
+				<h2 className='main-title'>{sectionTitle}</h2>
 				<p className='main-desc'>
-					We are one of the best laptop repairing service provider company in
-					Orlando and repair your system at your home/office at very cheapest
-					price.
+					{sectionDescription}
 				</p>
 				<div className='Services-list'>
 					<Link className={filter ===""?"blue":""} onClick={() => setFilter('')}>All</Link>/
@@ -31,7 +32,7 @@ const Services = () => {
 							<img src={curr.img} alt={curr.title} />
 						</div>
 						<div className='info'>
-							<h1>{curr.title}</h1>
+							<h2>{curr.title}</h2>
 							<p>{curr.desc}</p>
 							<button>Learn More</button>
 						</div>

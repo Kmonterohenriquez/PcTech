@@ -41,7 +41,7 @@ module.exports = {
     const {
       pc_name,
       qty,
-      description,
+      pd_description,
       pd_type,
       price,
       os,
@@ -50,21 +50,21 @@ module.exports = {
       ram,
       motherboard,
       storage,
-      img1,
-      img2,
-      img3,
-      img4,
-      img5,
+      // img1,
+      // img2,
+      // img3,
+      // img4,
+      // img5,
     } = req.body;
 
-    qty = +qty;
-    price = +price;
+    // qty = +qty;
+    // price = +price;
     console.log('Req body: ', req.body);
     await db.products
       .add_product(
         pc_name,
         qty,
-        description,
+        pd_description,
         pd_type,
         price,
         os,
@@ -72,15 +72,22 @@ module.exports = {
         graphic_card,
         ram,
         motherboard,
-        storage,
-        img1,
-        img2,
-        img3,
-        img4,
-        img5
+        storage
+        // img1,
+        // img2,
+        // img3,
+        // img4,
+        // img5
       )
-      .then((product) => res.status(200).send(product))
-      .catch((err) => res.status(500).send(err));
+      .then((product) => {
+        console.log("New item created")
+        return res.status(200).send(product)
+      })
+      .catch((err) => {
+        console.log("something wrong happend")
+        console.log("error message:", err)
+        return res.status(500).send(err)
+      });
   },
   deleteProduct: async (req, res) => {
     const db = req.app.get('db');

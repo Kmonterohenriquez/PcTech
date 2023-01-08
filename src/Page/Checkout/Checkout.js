@@ -1,42 +1,43 @@
 import React, { useState } from 'react';
 import './Checkout.sass';
 import Nav from '../../Components/Nav/Nav';
-import countries from './countriesData';
-import Axios from 'axios';
+import { Link } from 'react-router-dom';
+// import Axios from 'axios';
+import countriesData from './countriesData'
 
 const Checkout = () => {
-  const [state, setState] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    country: '',
-    state: '',
-    street: '',
-    zipCode: 0,
-  });
+  // const [state, setState] = useState({
+  //   firstName: '',
+  //   lastName: '',
+  //   email: '',
+  //   country: '',
+  //   state: '',
+  //   street: '',
+  //   zipCode: 0,
+  // });
 
-  function handleChange(evt) {
-    const value = evt.target.value;
-    setState({
-      ...state,
-      [evt.target.name]: value,
-    });
-  }
+  // function handleChange(evt) {
+  //   const value = evt.target.value;
+  //   setState({
+  //     ...state,
+  //     [evt.target.name]: value,
+  //   });
+  // }
 
-  const addUser = async () => {
-    const { firstName, lastName, email, country, state, street, zipCode } =
-      state;
+  // const addUser = async () => {
+  //   const { firstName, lastName, email, country, state, street, zipCode } =
+  //     state;
 
-    await Axios.post('/api/users', {
-      firstName,
-      lastName,
-      email,
-      country,
-      state,
-      street,
-      zipCode,
-    }).catch((err) => console.log(err));
-  };
+  //   await Axios.post('/api/users', {
+  //     firstName,
+  //     lastName,
+  //     email,
+  //     country,
+  //     state,
+  //     street,
+  //     zipCode,
+  //   }).catch((err) => console.log(err));
+  // };
 
   return (
     <div className='Checkout'>
@@ -54,8 +55,8 @@ const Checkout = () => {
             <label htmlFor=''>Country</label>
             <select id='country' name='country'>
               <option value=''>Choose a country</option>
-              {countries.map((country) => (
-                <option value={country}>{country}</option>
+              {countriesData.map((country) => (
+                <option key={country} value={country}>{country}</option>
               ))}
             </select>
             <label htmlFor=''>State/ County</label>
@@ -63,12 +64,11 @@ const Checkout = () => {
             <label htmlFor=''>Zip/ postal code</label>
             <input type='text' placeholder='Enter ZIP code' />
           </div>
-          <div className='form-group'>{countries.m}</div>
         </form>
       </div>
       <div className='btn-container'>
         <button className='back'>Back to cart</button>
-        <button className='next'>Payment method</button>
+        <Link to="/invoice" className='next'>Payment method</Link>
       </div>
     </div>
   );

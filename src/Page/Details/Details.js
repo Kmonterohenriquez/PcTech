@@ -5,6 +5,7 @@ import axios from 'axios';
 
 const Details = (props) => {
   const itemID = props.match.params.id;
+  const [mainImg, setMainImg] = useState('');
   const [itemData, setItemData] = useState([]);
 
   useEffect(() => {
@@ -27,15 +28,35 @@ const Details = (props) => {
       <Nav />
       <div className='Details-container container'>
         {itemData.map((curr) => (
-          <div className='flex'>
+          <div key={itemID} className='flex'>
             <div className='img-container margin-5-r'>
               <div className='sm-img-container'>
-                <img className='sm-pic' src={curr.img1} alt='' />
-                <img className='sm-pic' src={curr.img2} alt='' />
-                <img className='sm-pic' src={curr.img3} alt='' />
-                <img className='sm-pic' src={curr.img4} alt='' />
+                <img
+                  className='sm-pic'
+                  src={curr.img1}
+                  alt=''
+                  onClick={() => setMainImg(curr.img1)}
+                />
+                <img
+                  className='sm-pic'
+                  src={curr.img2}
+                  alt=''
+                  onClick={() => setMainImg(curr.img2)}
+                />
+                <img
+                  className='sm-pic'
+                  src={curr.img3}
+                  alt=''
+                  onClick={() => setMainImg(curr.img3)}
+                />
+                <img
+                  className='sm-pic'
+                  src={curr.img4}
+                  alt=''
+                  onClick={() => setMainImg(curr.img4)}
+                />
               </div>
-              <img className='bg-pic' src={curr.img4} alt='' />
+              <img className='bg-pic' src={mainImg || curr.img4} alt='' />
             </div>
             <div className='Details-info'>
               <h1>{curr.pc_name}</h1>
@@ -59,7 +80,7 @@ const Details = (props) => {
               </p>
               <div className='Details-btn-container'>
                 <h3 className='price'>
-                  Price: 
+                  Price:
                   <span>$</span>
                   {curr.price}
                 </h3>

@@ -1,31 +1,33 @@
 import React from 'react';
 import './WhyUs.sass';
-import info from './info.js';
+import getConsts from '../../utils/consts';
 
 const WhyUs = () => {
-	
-	return (
-		<div className='WhyUs'>
-			<h1>Why Choose Us</h1>
-			<p>Fastest repair service with best prices!</p>
-			<div className='sm-container box-container'>
-                {info.map(box => (
-                    <div className='box'>
-                        <div className="circle">
-                            <i className={box.icon}></i>
-                        </div>
-                        <p className='title'>{box.title}</p>
-                        <p className='description'>{box.description}</p>
-                        <div className="btn-container">
-                            <a className="read-me-btn" href={box.link}> Read more</a>
-                            <i className="fas fa-chevron-right"></i>
-                        </div>
-                    </div>
-                ))}
-                
+  const { sectionTitle, sectionDescription, cardsInfo } = getConsts.whyUs;
+  return (
+    <div className='WhyUs'>
+      <h2>{sectionTitle}</h2>
+      <p>{sectionDescription}</p>
+      <div className='sm-container box-container'>
+        {cardsInfo.map((box) => (
+          <div className='box' key={cardsInfo.id}>
+            <div className='circle'>
+              <i className={box.icon}></i>
             </div>
-		</div>
-	);
+            <p className='title'>{box.title}</p>
+            <p className='description'>{box.description}</p>
+            <div className='btn-container'>
+              <a className='read-me-btn' href={box.link}>
+                {' '}
+                Read more
+              </a>
+              <i className='fas fa-chevron-right'></i>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default WhyUs;

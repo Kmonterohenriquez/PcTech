@@ -1,0 +1,48 @@
+.Who
+    padding: 50px 0
+    &-container
+        background: #F5F5F5
+        display: grid 
+        grid-template-columns: 55% 45%
+        border-radius: 5px 
+        overflow: hidden
+        .content 
+            display: flex 
+            flex-direction: column
+            justify-content: center
+            align-items: flex-start
+            padding: 80px
+            h2 
+                position: relative
+                margin-bottom: 25px
+                font-size: 2.5rem
+                &::after
+                    position: absolute
+                    content: ""
+                    bottom: -8px 
+                    left: 5px
+                    // transform: translate(50%)
+                    height: 4px 
+                    width: 40px 
+                    background: #009CFF
+                    border-radius: 30px
+            p 
+                margin-bottom: 30px 
+                max-width: 450px
+                color: #434952
+            button 
+                padding: 12px 15px
+                background: #009CFF 
+                border-style: none 
+                color: white 
+                font-weight: bolder
+                font-size: 1rem
+                border-radius: 5px
+                cursor: pointer
+                transition: background .5s
+                &:hover
+                    background: darken(#009CFF , 5% )
+        img 
+            height: 430px
+            width: 100%
+            object-fit: cover

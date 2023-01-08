@@ -55,7 +55,7 @@ const AddProductModal = (props) => {
     await Axios.post('/api/products', {
       pc_name: name,
       qty,
-      description,
+      pd_description: description,
       pd_type,
       price,
       os,
@@ -64,11 +64,11 @@ const AddProductModal = (props) => {
       ram,
       motherboard,
       storage,
-      img1,
-      img2,
-      img3,
-      img4,
-      img5,
+      // img1,
+      // img2,
+      // img3,
+      // img4,
+      // img5,
     })
       .then((res) => {
         console.clear();

@@ -7,16 +7,19 @@ import Card from '../../Components/Card/Card';
 import Footer from '../../Components/Footer/Footer';
 
 const Laptops = () => {
-	const [allLaptops, setAllLaptops] = useState([])
+  const [allLaptops, setAllLaptops] = useState([]);
   useEffect(() => {
     getLaptops();
     console.log('useEffect updated');
   }, []);
 
   const getLaptops = async () => {
-    Axios.get('/api/products/laptops/').then((res) => {
-		setAllLaptops(res.data);
-    });
+    Axios.get('/api/products/laptops/')
+      .then((res) => {
+        console.log(res.data)
+        setAllLaptops(res.data);
+      })
+      .catch((err) => console.log(err));
   };
   return (
     <div className='Laptops'>
@@ -26,7 +29,7 @@ const Laptops = () => {
 
         <div className='grid-container'>
           {allLaptops.map((curr) => (
-            <Card data={curr} />
+            <Card key={curr.product_id} data={curr} />
           ))}
         </div>
       </div>

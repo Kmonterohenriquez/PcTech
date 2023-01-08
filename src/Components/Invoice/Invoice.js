@@ -14,7 +14,7 @@ const Invoice = () => {
 
   const getUser = async () => {
     await Axios.get('/api/users/')
-      .then((res) => setCart(res.user))
+      .then((res) => setUser(res.user))
       .catch((err) => console.log(err));
   };
 
@@ -24,20 +24,17 @@ const Invoice = () => {
     getUser();
   }, []);
 
-
-  const {
-    firstName,
-    lastName,
-    country,
-    email,
-    state
-    street,
-    zipCode,
-
-  } = user;
   const filtertedCart = cart.filter(
     (v, i, a) => a.findIndex((v2) => v2.product_id === v.product_id) === i
   );
+
+  const { firstName, lastName, country, email, state, street, zipCode } = user;
+  const { pc_name, qty, price } = filtertedCart;
+
+  const totalPrice = cart.reduce(
+    (previousValue, currentValue) => previousValue + currentValue.price
+  );
+
   let currentDate = new Date().toLocaleDateString();
   return (
     <div>
@@ -47,13 +44,23 @@ const Invoice = () => {
         <p>Order placed: {currentDate}</p>
 
         <strong>Item List</strong>
-
+        {filtertedCart.map((item, i) => (
+          <div className='item' key={i}>
+            <p>{pc_name}</p>
+            <p>{qty}</p>
+            <p>{price}</p>
+            <p>{totalPrice}</p>
+          </div>
+        ))}
         <strong>Billing information</strong>
-        <p>{username}</p>
+        <p>
+          {firstName} {lastName}
+        </p>
+        <p>{email}</p>
         <p>
           {street}
           {state}
-          {zipcode}
+          {zipCode}
         </p>
         <p>{country}</p>
 

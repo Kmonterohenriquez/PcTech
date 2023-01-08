@@ -2,31 +2,28 @@ import React, { useState, useEffect } from 'react';
 import './ItemOnCart.sass';
 import axios from 'axios';
 
-const ItemOnCart = (props) => {
-  const { pc_name, product_id, price, qty } = props.data;
+const ItemOnCart = ({data, getCart}) => {
+  const { pc_name, product_id, price, qty } = data;
   const [totalQty, setTotalQty] = useState(qty);
   const [total, setTotal] = useState(price);
 
   const getTotal = () => setTotal(price * qty);
   useEffect(() => {
     getTotal();
-    console.log('Use effect running', total);
-  }, [totalQty]);
+    getCart();
+  }, [totalQty, total]);
 
   const increaseQty = async (id) => {
     await axios.put(`/api/cart/increase/${id}`).then();
-    setTotalQty(qty + 1);
-    getTotal();
+    setTotalQty(qty - 1);
   };
   const decreaseQty = async (id) => {
     await axios.put(`/api/cart/decrease/${id}`).then();
     setTotalQty(qty + 1);
-    getTotal();
   };
 
   const deleteProductFromCart = async (id) => {
     await axios.delete(`/api/cart/${id}`);
-    getTotal();
   };
 
   return (
@@ -57,7 +54,7 @@ const ItemOnCart = (props) => {
           <span>$</span> {total}
         </p>
       </div>
-      <div className='delete-btn' onClick={deleteProductFromCart(product_id)}>
+      <div className='delete-btn' onClick={()=> deleteProductFromCart(product_id)}>
         <i className=' fas fa-times'></i>
       </div>
     </div>

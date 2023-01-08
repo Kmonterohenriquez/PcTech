@@ -32,7 +32,7 @@ const Cart = (props) => {
         <hr />
         <div className='items-container'>
           {filtertedCart.map((item) => (
-            <ItemOnCart data={item} />
+            <ItemOnCart key={item.id} data={item} getCart={getCart} />
           ))}
         </div>
         <div className='Cart-btn-container'>
