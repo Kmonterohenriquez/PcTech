@@ -1,4 +1,5 @@
 import whoWeAreImg from '../img/who.jpg';
+
 const getConsts = {
   whyUs: {
     sectionTitle: 'Why Choose Us',

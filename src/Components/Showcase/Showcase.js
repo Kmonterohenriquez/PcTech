@@ -9,11 +9,11 @@ const Showcase = () => {
 		<div className='Showcase'>
 			<nav>
 				<ul>
-					<Link to='/laptops'>Laptops</Link>
-					<Link to='/desktops' >Desktops</Link>
-					<Link to='/location'>Location</Link>
-					<Link to='/about_us'>About Us</Link>
-					<Link className='admin-btn' to='/admin_center'>Admin Center</Link>
+					<Link to='/products/laptops/'>Laptops</Link>
+					<Link to='/products/desktops/' >Desktops</Link>
+					<Link to='/location/'>Location</Link>
+					<Link to='/about_us/'>About Us</Link>
+					<Link className='admin-btn' to='/admin_center/'>Admin Center</Link>
 				</ul>
 			</nav>
 			<img className='showcase-bg' src={bg} alt='Showcase Background' />

@@ -1,11 +1,9 @@
 import React from 'react';
 import './About.sass';
-import Nav from '../../Components/Nav/Nav';
 import pic_1 from '../../img/kevin.png';
 const About = () => {
   return (
     <div className='About'>
-      <Nav />
       <h1 className='title'>Who we are</h1>
       <div className='box-container margin-5-b'>
         <div className='box'>

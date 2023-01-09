@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './ItemOnCart.sass';
 import axios from 'axios';
 
-const ItemOnCart = ({data, getCart}) => {
+const ItemOnCart = ({ data, getCart }) => {
   const { pc_name, product_id, price, qty } = data;
   const [totalQty, setTotalQty] = useState(qty);
   const [total, setTotal] = useState(price);
@@ -11,7 +11,12 @@ const ItemOnCart = ({data, getCart}) => {
   useEffect(() => {
     getTotal();
     getCart();
-  }, [totalQty, total]);
+  }, [qty]);
+
+  useEffect(() => {
+    getTotal();
+    getCart();
+  }, []);
 
   const increaseQty = async (id) => {
     await axios.put(`/api/cart/increase/${id}`).then();
@@ -54,7 +59,10 @@ const ItemOnCart = ({data, getCart}) => {
           <span>$</span> {total}
         </p>
       </div>
-      <div className='delete-btn' onClick={()=> deleteProductFromCart(product_id)}>
+      <div
+        className='delete-btn'
+        onClick={() => deleteProductFromCart(product_id)}
+      >
         <i className=' fas fa-times'></i>
       </div>
     </div>

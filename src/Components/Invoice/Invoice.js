@@ -1,6 +1,5 @@
 import Axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import Nav from '../Nav/Nav';
 
 const Invoice = () => {
   const [cart, setCart] = useState([]);
@@ -38,7 +37,6 @@ const Invoice = () => {
   let currentDate = new Date().toLocaleDateString();
   return (
     <div>
-      <Nav />
       <div className='invoice-container'>
         <h1>Invoice</h1>
         <p>Order placed: {currentDate}</p>

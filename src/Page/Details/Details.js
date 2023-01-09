@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './Details.sass';
-import Nav from '../../Components/Nav/Nav';
 import axios from 'axios';
 
 const Details = (props) => {
@@ -25,7 +24,6 @@ const Details = (props) => {
   console.log('item ID: ', itemID);
   return (
     <div className='Details'>
-      <Nav />
       <div className='Details-container container'>
         {itemData.map((curr) => (
           <div key={itemID} className='flex'>

@@ -1,0 +1,25 @@
+.Products
+    &-container
+        padding: 100px 0 250px
+        
+        .grid-container
+            margin-top: 100px
+            display: grid
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) 
+            grid-gap: 25px
+            justify-items: center
+
+    &-title 
+        text-align: center 
+        position: relative
+        font-size: 2.8rem
+        &::after 
+            content: ""
+            position: absolute
+            bottom: -15px
+            left: 50%
+            transform: translateX(-50%)
+            width: 50px
+            height: 4px
+            background: #009CFF
+            border-radius: 40px

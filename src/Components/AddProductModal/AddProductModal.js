@@ -31,7 +31,7 @@ const AddProductModal = (props) => {
       [evt.target.name]: value,
     });
   }
-  
+
   const addItem = async () => {
     const {
       name,
@@ -71,9 +71,7 @@ const AddProductModal = (props) => {
       // img5,
     })
       .then((res) => {
-        console.clear();
         console.log('Product added!');
-        console.log('response', res);
       })
       .catch((err) => console.log(err));
   };

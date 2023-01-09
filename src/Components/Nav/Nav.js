@@ -9,10 +9,11 @@ const Nav = () => {
     getCart();
     console.log('useEffect updated!');
   }, []);
+
   const getCart = () => {
     axios.get('/api/cart/').then((res) => setCart(res.data.length));
   };
-  console.log('cart items from nav: ', cart);
+
   return (
     <div className='Nav'>
       <div className='Nav-container container'>
@@ -21,11 +22,11 @@ const Nav = () => {
         </Link>
         <nav>
           <ul>
-            <Link to='/laptops'>Laptops</Link>
-            <Link to='/desktops'>Desktops</Link>
-            <Link to='/location'>Location</Link>
-            <Link to='/about_us'>About Us</Link>
-            <Link to='/cart' className='cart'>
+            <Link to='/products/laptops/'>Laptops</Link>
+            <Link to='/products/desktops/'>Desktops</Link>
+            <Link to='/location/'>Location</Link>
+            <Link to='/about_us/'>About Us</Link>
+            <Link to='/cart/' className='cart'>
               <i className='fas fa-shopping-cart'>
                 <p className='item-num'>{cart}</p>
               </i>

@@ -21,6 +21,11 @@ const Cart = (props) => {
     getCart();
   }, []);
 
+  // Update on Cart Change
+  useEffect(() => {
+    getCart();
+  }, [cart]);
+
   const filtertedCart = cart.filter(
     (v, i, a) => a.findIndex((v2) => v2.product_id === v.product_id) === i
   );
@@ -32,7 +37,7 @@ const Cart = (props) => {
         <hr />
         <div className='items-container'>
           {filtertedCart.map((item) => (
-            <ItemOnCart key={item.id} data={item} getCart={getCart} />
+            <ItemOnCart key={item.id} data={item} getCart={()=> getCart()} />
           ))}
         </div>
         <div className='Cart-btn-container'>

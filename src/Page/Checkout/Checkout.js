@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Checkout.sass';
-import Nav from '../../Components/Nav/Nav';
 import { Link } from 'react-router-dom';
 // import Axios from 'axios';
 import countriesData from './countriesData'
@@ -41,7 +40,6 @@ const Checkout = () => {
 
   return (
     <div className='Checkout'>
-      <Nav />
       <div className='Billing-container container'>
         <h1>Billing details</h1>
         <form>

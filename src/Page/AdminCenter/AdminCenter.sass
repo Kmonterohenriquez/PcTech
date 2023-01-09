@@ -1,16 +1,7 @@
 .AdminCenter
     position: relative
     color: #747985
-    .unclickable 
-        // background: black
-        background: #00000065
-        position: absolute 
-        z-index: 2
-        top: 0px 
-        left: 0
-        width: 100%
-        min-height: 100vh
-        height: 100%
+    
     &-container 
         padding: 100px 0
     .header-container
@@ -76,3 +67,15 @@
             background: #F44541
         .edit-btn
             background: #393e46
+
+.unclickable 
+    background: #00000065
+    position: absolute 
+    content: ''
+    z-index: 2
+    bottom: 0
+    top: 0 
+    left: 0
+    width: 100%
+    min-height: 100vh
+    // height: 100%
