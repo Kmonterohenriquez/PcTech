@@ -50,11 +50,7 @@ module.exports = {
       ram,
       motherboard,
       storage,
-      // img1,
-      // img2,
-      // img3,
-      // img4,
-      // img5,
+      itemPics
     } = req.body;
 
     // qty = +qty;
@@ -72,21 +68,17 @@ module.exports = {
         graphic_card,
         ram,
         motherboard,
-        storage
-        // img1,
-        // img2,
-        // img3,
-        // img4,
-        // img5
+        storage,
+        itemPics,
       )
       .then((product) => {
-        console.log("New item created")
-        return res.status(200).send(product)
+        console.log('New item created');
+        return res.status(200).send(product);
       })
       .catch((err) => {
-        console.log("something wrong happend")
-        console.log("error message:", err)
-        return res.status(500).send(err)
+        console.log('something wrong happened');
+        console.log('error message:', err);
+        return res.status(500).send(err);
       });
   },
   deleteProduct: async (req, res) => {

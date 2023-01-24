@@ -9,11 +9,11 @@ const AddProductModal = (props) => {
     qty: 1,
     description: '',
     pd_type: '',
-    img1: '',
-    img2: '',
-    img3: '',
-    img4: '',
-    img5: '',
+    pic_1: '',
+    pic_2: '',
+    pic_3: '',
+    pic_4: '',
+    pic_5: '',
     price: 0,
     os: '',
     cpu: '',
@@ -45,11 +45,11 @@ const AddProductModal = (props) => {
       ram,
       motherboard,
       storage,
-      img1,
-      img2,
-      img3,
-      img4,
-      img5,
+      pic_1,
+      pic_2,
+      pic_3,
+      pic_4,
+      pic_5,
     } = state;
 
     await Axios.post('/api/products', {
@@ -64,11 +64,7 @@ const AddProductModal = (props) => {
       ram,
       motherboard,
       storage,
-      // img1,
-      // img2,
-      // img3,
-      // img4,
-      // img5,
+      itemPics: [pic_1, pic_2, pic_3, pic_4, pic_5],
     })
       .then((res) => {
         console.log('Product added!');
@@ -87,35 +83,35 @@ const AddProductModal = (props) => {
           <input
             type='text'
             placeholder='Insert Image 1'
-            name='img1'
+            name='pic_1'
             onChange={(e) => handleChange(e)}
           />
           <label htmlFor=''>Image 2</label>
           <input
             type='text'
             placeholder='Insert Image 2'
-            name='img2'
+            name='pic_2'
             onChange={(e) => handleChange(e)}
           />
           <label htmlFor=''>Image 3</label>
           <input
             type='text'
             placeholder='Insert Image 3'
-            name='img3'
+            name='pic_3'
             onChange={(e) => handleChange(e)}
           />
           <label htmlFor=''>Image 4</label>
           <input
             type='text'
             placeholder='Insert Image 4'
-            name='img4'
+            name='pic_4'
             onChange={(e) => handleChange(e)}
           />
           <label htmlFor=''>Image 5</label>
           <input
             type='text'
             placeholder='Insert Image 5'
-            name='img5'
+            name='pic_5'
             onChange={(e) => handleChange(e)}
           />
         </div>

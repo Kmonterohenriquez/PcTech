@@ -31,30 +31,36 @@ const Details = (props) => {
               <div className='sm-img-container'>
                 <img
                   className='sm-pic'
-                  src={curr.img1}
+                  src={curr.pic_1}
                   alt=''
-                  onClick={() => setMainImg(curr.img1)}
+                  onClick={() => setMainImg(curr.pic_1)}
                 />
                 <img
                   className='sm-pic'
-                  src={curr.img2}
+                  src={curr.pic_2}
                   alt=''
-                  onClick={() => setMainImg(curr.img2)}
+                  onClick={() => setMainImg(curr.pic_2)}
                 />
                 <img
                   className='sm-pic'
-                  src={curr.img3}
+                  src={curr.pic_3}
                   alt=''
-                  onClick={() => setMainImg(curr.img3)}
+                  onClick={() => setMainImg(curr.pic_3)}
                 />
                 <img
                   className='sm-pic'
-                  src={curr.img4}
+                  src={curr.pic_4}
                   alt=''
-                  onClick={() => setMainImg(curr.img4)}
+                  onClick={() => setMainImg(curr.pic_4)}
+                />
+                <img
+                  className='sm-pic'
+                  src={curr.pic_5}
+                  alt=''
+                  onClick={() => setMainImg(curr.pic_5)}
                 />
               </div>
-              <img className='bg-pic' src={mainImg || curr.img4} alt='' />
+              <img className='bg-pic' src={mainImg || curr.pic_1} alt='' />
             </div>
             <div className='Details-info'>
               <h1>{curr.pc_name}</h1>

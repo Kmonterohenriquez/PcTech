@@ -11,18 +11,24 @@ create table products_pctech (
     ram varchar(250),
     motherboard varchar(250),
     storage varchar(250),
-    pd_type varchar(20)
-);
-
----> Pictures  <---
-create table pic_pctech (
-    pic_id serial primary key,
-    product_id int REFERENCES products_pctech(product_id),
+    pd_type varchar(20),
     pic_1 varchar(250),
     pic_2 varchar(250),
     pic_3 varchar(250),
-    pic_4 varchar(250)
+    pic_4 varchar(250),
+    pic_5 varchar(250),
 );
+
+-- ---> Pictures  <---
+-- create table pic_pctech (
+--     pic_id serial primary key,
+--     product_id int REFERENCES products_pctech(product_id),
+--     pic_1 varchar(250),
+--     pic_2 varchar(250),
+--     pic_3 varchar(250),
+--     pic_4 varchar(250),
+--     pic_5 varchar(250),
+-- );
 
 --->  Cart  <---
 create table cart_pctech (
