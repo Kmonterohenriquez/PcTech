@@ -2,10 +2,10 @@ import React from 'react';
 import './Card.sass';
 import camera from '../../img/camera-icon.png';
 const Card = (props) => {
-  let { pc_name, os, cpu, graphic, ram, motherboard, storage, price, pic_1 } =
+  let { pc_name, os, cpu, graphic, ram, motherboard, storage, price, images } =
     props.data;
 
-    const imgToShow =  pic_1 && pic_1.length > 0? pic_1 : camera;
+    const imgToShow =  images && images[0] && images[0].length > 0? images[0] : camera;
 
   return (
     <div className='Card'>

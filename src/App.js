@@ -8,7 +8,6 @@ import { withRouter } from 'react-router';
 
 function App({ location }) {
   const shouldShowNav = ['/', '/admin_center/','/cart/'].includes(location.pathname);
-  console.log('location', location);
   return (
     <div className='App'>
       { !shouldShowNav && <Nav />}

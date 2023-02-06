@@ -64,7 +64,11 @@ const AddProductModal = (props) => {
       ram,
       motherboard,
       storage,
-      itemPics: [pic_1, pic_2, pic_3, pic_4, pic_5],
+      pic_1,
+      pic_2,
+      pic_3,
+      pic_4,
+      pic_5,
     })
       .then((res) => {
         console.log('Product added!');

@@ -24,6 +24,7 @@ const Products = (props) => {
     getAllItems();
   }, []);
 
+  console.log("allItems: ", allItems)
   return (
     <div className='Products'>
       <div className='Products-container container'>

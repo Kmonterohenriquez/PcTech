@@ -18,26 +18,29 @@ const Cart = (props) => {
 
   // Initialization
   useEffect(() => {
+    console.log('use effect udpated');
     getCart();
   }, []);
 
   // Update on Cart Change
   useEffect(() => {
-    getCart();
+    // getCart();
+    console.log('use effect udpated');
   }, [cart]);
 
   const filtertedCart = cart.filter(
     (v, i, a) => a.findIndex((v2) => v2.product_id === v.product_id) === i
   );
+
   return (
     <div className='Cart container'>
       <div className='header'>
         <img src={logo} onClick={() => goBack()} alt='' className='logo' />
-        <h1 className='title'>Your Shopping Cart</h1>
+        <h1 className='title'>Shopping Cart</h1>
         <hr />
         <div className='items-container'>
           {filtertedCart.map((item) => (
-            <ItemOnCart key={item.id} data={item} getCart={()=> getCart()} />
+            <ItemOnCart key={item.product_id} data={item} getCart={getCart} />
           ))}
         </div>
         <div className='Cart-btn-container'>

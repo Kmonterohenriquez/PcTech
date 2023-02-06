@@ -24,7 +24,7 @@ const AdminCenter = () => {
   };
 
   const deleteProduct = async (id) => {
-	console.log("test - ID", id)
+    console.log('test - ID', id);
     await axios.delete(`/api/products/${id}`).catch((err) => console.log(err));
     getAllProducts();
   };

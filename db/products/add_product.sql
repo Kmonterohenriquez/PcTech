@@ -4,13 +4,13 @@ INSERT INTO products_pctech (
     pd_description, 
     pd_type, 
     price, 
-    os, 
+    os,
     cpu, 
     graphic_card, 
     ram, 
     motherboard, 
     storage,
-    images,
+    images
 )
 VALUES
 (

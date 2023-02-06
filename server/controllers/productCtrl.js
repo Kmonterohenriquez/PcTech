@@ -50,11 +50,16 @@ module.exports = {
       ram,
       motherboard,
       storage,
-      itemPics
+      pic_1,
+      pic_2,
+      pic_3,
+      pic_4,
+      pic_5,
     } = req.body;
 
     // qty = +qty;
     // price = +price;
+    const images = [pic_1, pic_2, pic_3, pic_4, pic_5];
     console.log('Req body: ', req.body);
     await db.products
       .add_product(
@@ -69,7 +74,7 @@ module.exports = {
         ram,
         motherboard,
         storage,
-        itemPics,
+        images
       )
       .then((product) => {
         console.log('New item created');

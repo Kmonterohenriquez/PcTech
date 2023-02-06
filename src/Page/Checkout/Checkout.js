@@ -65,7 +65,7 @@ const Checkout = () => {
         </form>
       </div>
       <div className='btn-container'>
-        <button className='back'>Back to cart</button>
+        <Link to="/cart" className='back'>Back to cart</Link>
         <Link to="/invoice" className='next'>Payment method</Link>
       </div>
     </div>
