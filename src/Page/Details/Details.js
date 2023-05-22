@@ -12,15 +12,15 @@ const Details = (props) => {
 
   useEffect(() => {
     getItemData();
-  }, []);
-
+  });
+  
   const getItemData = () => {
     axios
-      .get(`/api/products/${itemID}`)
-      .then((res) => setItemData(res.data[0]))
-      .catch((err) => console.log(err));
+    .get(`/api/products/${itemID}`)
+    .then((res) => setItemData(res.data[0]))
+    .catch((err) => console.log(err));
   };
-
+  
   const itemSmallImages =
     itemData.images &&
     itemData.images.map((image,i) => (

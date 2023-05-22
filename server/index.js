@@ -18,6 +18,7 @@ massive(CONNECTION_STRING)
   .catch((err) => console.log(err));
 
 // Products - ENDPOINTS
+app.post('/api/createalltables', productsCtrl.createAllTables); // In cause we want to setup a new database.
 app.get('/api/products/', productsCtrl.getAllProducts);
 app.get('/api/products/desktops/', productsCtrl.getAllDesktops);
 app.get('/api/products/laptops/', productsCtrl.getAllLaptops);

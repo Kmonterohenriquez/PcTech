@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const ItemOnCart = ({ data, getCart }) => {
   const { pc_name, product_id, price, qty, images } = data;
-  const [totalQty, setTotalQty] = useState(qty);
+  // const [totalQty, setTotalQty] = useState(qty);
   const [total, setTotal] = useState(price);
 
   const getTotal = () => setTotal(price * qty);
@@ -20,12 +20,12 @@ const ItemOnCart = ({ data, getCart }) => {
 
   const increaseQty = async (id) => {
     await axios.put(`/api/cart/increase/${id}`).then();
-    setTotalQty(qty - 1);
+    // setTotalQty(qty - 1);
   };
 
   const decreaseQty = async (id) => {
     await axios.put(`/api/cart/decrease/${id}`).then();
-    setTotalQty(qty + 1);
+    // setTotalQty(qty + 1);
   };
 
   const deleteProductFromCart = async (id) => {
