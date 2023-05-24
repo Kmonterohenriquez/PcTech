@@ -8,6 +8,10 @@ const AdminCenter = () => {
   const [addBtn, setAddBtn] = useState(false);
   const [allProducts, setAllProducts] = useState([]);
 
+  if (process.env.NODE_ENV === 'production'){
+    axios.defaults.baseURL = 'https://pctech-website.onrender.com';
+  }
+
   function AddBtnToggle() {
     setAddBtn(!addBtn);
   }

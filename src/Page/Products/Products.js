@@ -8,6 +8,10 @@ const Products = (props) => {
   const itemType = props.match.params.itemsType;
   const [allItems, setAllItems] = useState([]);
 
+  if (process.env.NODE_ENV === 'production'){
+    axios.defaults.baseURL = 'https://pctech-website.onrender.com';
+  }
+
   const getAllItems = async () => {
     axios.get(`/api/products/${itemType}/`).then((res) => {
       setAllItems(res.data);

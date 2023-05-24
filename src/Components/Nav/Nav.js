@@ -10,6 +10,10 @@ const Nav = () => {
     console.log('useEffect updated!');
   }, []);
 
+  if (process.env.NODE_ENV === 'production'){
+    axios.defaults.baseURL = 'https://pctech-website.onrender.com';
+  }
+
   const getCart = () => {
     axios.get('/api/cart/').then((res) => setCart(res.data.length));
   };

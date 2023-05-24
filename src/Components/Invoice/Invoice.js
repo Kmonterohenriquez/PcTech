@@ -5,6 +5,10 @@ const Invoice = () => {
   const [cart, setCart] = useState([]);
   const [user, setUser] = useState([]);
 
+  if (process.env.NODE_ENV === 'production'){
+    Axios.defaults.baseURL = 'https://pctech-website.onrender.com';
+  }
+
   const getCart = async () => {
     await Axios.get('/api/cart/')
       .then((res) => setCart(res.data))

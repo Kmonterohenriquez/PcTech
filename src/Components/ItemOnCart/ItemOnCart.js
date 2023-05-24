@@ -6,6 +6,10 @@ const ItemOnCart = ({ data, getCart }) => {
   const { pc_name, product_id, price, qty, images } = data;
   // const [totalQty, setTotalQty] = useState(qty);
   const [total, setTotal] = useState(price);
+  
+  if (process.env.NODE_ENV === 'production'){
+    axios.defaults.baseURL = 'https://pctech-website.onrender.com';
+  }
 
   const getTotal = () => setTotal(price * qty);
   useEffect(() => {
@@ -17,7 +21,7 @@ const ItemOnCart = ({ data, getCart }) => {
     getTotal();
     getCart();
   }, []);
-
+  
   const increaseQty = async (id) => {
     await axios.put(`/api/cart/increase/${id}`).then();
     // setTotalQty(qty - 1);

@@ -33,6 +33,9 @@ const AddProductModal = (props) => {
   }
 
   const addItem = async () => {
+    if (process.env.NODE_ENV === 'production'){
+      Axios.defaults.baseURL = 'https://pctech-website.onrender.com';
+    }
     const {
       name,
       qty,
