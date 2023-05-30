@@ -1,5 +1,5 @@
 ---> Products Info <---
-create table products_pctech (
+create table IF NOT EXISTS products_pctech (
     product_id serial primary key,
     pd_description: varchar(250),
     price: int,
@@ -31,14 +31,14 @@ create table products_pctech (
 -- );
 
 --->  Cart  <---
-create table cart_pctech (
+create table IF NOT EXISTS cart_pctech (
     cart_id serial primary key,
     product_id int,
     qty int
 );
 
 --->  User  <---
-create table users (
+create table IF NOT EXISTS users (
     user_id serial primary key,
     firstName varchar(250),
     lastName varchar(100),

@@ -17,6 +17,7 @@
     "express": "^4.17.1",
     "massive": "^6.1.4",
     "nodemon": "^2.0.3",
+    "pg": "^8.11.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
@@ -26,11 +27,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start:server": "node ./server/index.js",
+    "start:server": "node ./server/index.js && npm run create-db",
     "build": "react-scripts build",
     "build:server": "npm i",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "seed": "node ./db/index.js",
+    "create-db": "psql -U postgres < ./db/seed.sql"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -49,5 +52,17 @@
   },
   "devDependencies": {
     "sass": "^1.62.1"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kmonterohenriquez/PcTech.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kmonterohenriquez/PcTech/issues"
+  },
+  "homepage": "https://github.com/Kmonterohenriquez/PcTech#readme"
 }

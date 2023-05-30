@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express'),
   massive = require('massive'),
-  { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env,
+  { SERVER_PORT, CONNECTION_STRING } = process.env,
   productsCtrl = require('./controllers/productCtrl'),
   imagesCtrl = require('./controllers/imagesCtrl'),
   app = express();
@@ -38,3 +38,4 @@ app.get('/api/images/:product_id', imagesCtrl.getAllImages);
 
 const port = SERVER_PORT || 5000;
 app.listen(port, () => console.log(`Server running on port ${port}`));
+
